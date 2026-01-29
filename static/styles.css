@@ -1,0 +1,121 @@
+
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;   
+}
+
+.avatar {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.rounded_full {
+  border-radius: 100%;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem; /* gap-12 */
+  padding: 1.5rem; /* p-6 */
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+
+.full_height {
+  min-height: 100vh;
+}
+
+.bg_base_100 {
+  background-color: hsl(var(--b1));
+}
+
+.home_outer_container {
+  max-width: 50%;
+  margin: 20px auto;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 2px;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.home_outer_container h2 {
+  margin: 40px 0px;
+}
+.outer_container {
+  display: flex;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 2px;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.outer_container h1 {
+  text-align: center;
+  margin: 5px 0px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.outer_container h2 {
+  margin: 40px 0px;
+  font-size: 1.5rem;
+  font-weight: 700;  
+}
+
+.outer_container h3 {
+  margin: 20px 0px;
+  font-size: 1.3rem;
+  font-weight: 700;  
+}
+
+.card_component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;          /* rounded-xl */
+  background-color: hsl(var(--b1)); /* bg-base-100 */
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.contact_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_container a:hover {
+  text-decoration: underline;
+}
+
+.all_rights_reserved {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  border-top: 1px solid black;
+}

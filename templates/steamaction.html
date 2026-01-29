@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spencer Renfro Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+
+  <body>
+    <div>
+      <nav class="navbar">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('polytopia') }}">Polytopia</a>
+          <a href="{{ url_for('steamaction') }}">Steam Action</a>
+      </nav>
+
+      <div>
+        <div class="outer_container">
+            <!-- {/* About */} -->
+          <div>
+            <h1>Steam Action</h1>
+            <p>
+              Steam Action is a carpet cleaning company that my father started.
+              I created a website for him to use to manage his business and to
+              get new customers. The website is built using Tailwind, and React.js. It is a
+              single page application or SPA for short. I incorporated a cost estimate calculator to 
+              help customers get a ball park estimate of the cost to clean their carpets. 
+            </p>
+            <!-- {/* Services */} -->
+            <div>
+              <h2>Services</h2>
+              <ul>
+                <li>Carpet Cleaning</li>
+                <li>Tile Cleaning</li>
+                <li>Grout Cleaning</li>
+                <li>Upholstery Cleaning</li>
+              </ul>
+            </div>
+            <!-- {/* Service Areas */} -->
+            <div>
+              <h2>
+                Service Areas in Illinois
+              </h2>
+              <ul>
+                <li>O'Fallon</li>
+                <li>Carlinville</li>
+                <li>Edwardsville</li>
+                <li>Greenville</li>
+                <li>Belleville</li>
+                <li>Highland</li>
+              </ul>
+            </div>
+            <!-- {/* Link */} -->
+            <h3>Link</h3>
+            <a
+              href="https://www.steamactionpros.com/"
+              target="_blank"
+            >
+              Steam Action
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

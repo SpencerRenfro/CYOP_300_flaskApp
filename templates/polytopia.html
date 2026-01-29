@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spencer Renfro Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+
+  <body>
+      <div>
+      <nav class="navbar">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('polytopia') }}">Polytopia</a>
+          <a href="{{ url_for('steamaction') }}">Steam Action</a>
+      </nav>
+      <div>
+        <div class="outer_container">
+          <div>
+            <div class="avatar">
+              <h1>Polytopia</h1>
+              <div>
+                <img
+                  class="rounded_full"
+                  src="{{ url_for('static', filename='images/polytopia.jpg') }}"
+                  alt="Polytopia"
+                  width="300"
+                  height="300"
+                />
+              </div>
+            </div>
+            <h2>About</h2>
+            <p>
+              Polytopia is a city-building strategy game that takes place in a
+              procedurally generated world. The game is played from a top-down
+              perspective and features a unique hexagonal grid system. The game is
+              currently in early access on Steam. 
+            </p>
+            <h2>Battle Calculator</h2>
+            <p>
+              The battle calculator is a tool to help you calculate the outcome of
+              a battle. It is not 100% accurate, but it is a good starting point.
+              It is currently in development and is not yet available.
+            </p>
+            <p>
+                I made my own version of the battle calculator for Polytopia. I have made this project many times.
+                I first made this project in terminal code in C, then I made it in vanilla javascript then finally in React.
+            </p>
+
+            <h2>Link</h2>
+            <a href="https://reactpolytopia-git-main-spencer-renfros-projects.vercel.app/" className="btn hover:underline" target="_blank">
+              Polytopia Battle Calculator
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
