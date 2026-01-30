@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('polytopia') }}">Polytopia</a>
+        <a href="{{ url_for('steamaction') }}">Steam Action</a>
+        <a href="{{ url_for('inventory_management') }}">Inventory Management</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </nav>
+    <div>
+        <div class="avatar">
+              <h1>Inventory Management</h1>
+              <img
+                class="rounded_full"
+                src="{{ url_for('static', filename='images/screwdriver.png') }}"
+                alt="Profile picture"
+                width="300"
+                height="300"
+              />
+        </div>
+        <p>
+            I designed and implemented a inventory management system based off tool sign in / sign out that I used
+            when I was in the military. The system was built using React.js and JSON-server for the database. The system
+            is an SPA and uses React Router for navigation. The user can add, remove, and update tools in the inventory. 
+            The user can also sign in and sign out tools. The user can search for tools by name or by category.
+             The user can also filter tools by category, sort tools by name or by category,view a tool's details,view a tool's history,
+             view a tool's current status. As well as creating customers for frequently used customers and signing out tools to them. 
+        </p>
+    </div>
+</body>
+</html>

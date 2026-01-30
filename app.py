@@ -25,5 +25,16 @@ def polytopia():
 def steamaction():
     return render_template('steamaction.html')
 
+@app.route("/inventory_management")
+def inventory_management():
+    return render_template('inventory_management.html')
+
+@app.route("/signup")
+def signup():
+    return render_template('signup.html')
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
 
 

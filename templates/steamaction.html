@@ -13,13 +13,28 @@
           <a href="{{ url_for('index') }}">Home</a>
           <a href="{{ url_for('polytopia') }}">Polytopia</a>
           <a href="{{ url_for('steamaction') }}">Steam Action</a>
+          <a href="{{ url_for('inventory_management') }}">Inventory Management</a>
+          <a href="{{ url_for('signup') }}">Sign Up</a>
+          <a href="{{ url_for('login') }}">Login</a>
       </nav>
 
       <div>
         <div class="outer_container">
             <!-- {/* About */} -->
           <div>
-            <h1>Steam Action</h1>
+              <div class="avatar">
+                <h1>Steam Action</h1>
+                <div>
+                  <img
+                    class="rounded_full"
+                    src="{{ url_for('static', filename='images/van.png') }}"
+                    alt="Polytopia"
+                    width="300"
+                    height="300"
+                  />
+                </div>
+            </div>
+
             <p>
               Steam Action is a carpet cleaning company that my father started.
               I created a website for him to use to manage his business and to

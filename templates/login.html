@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('polytopia') }}">Polytopia</a>
+            <a href="{{ url_for('steamaction') }}">Steam Action</a>
+            <a href="{{ url_for('inventory_management') }}">Inventory Management</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+        <div>
+            <h1 class="form_title">Login</h1>
+            <form action="/login" method="post" class="form">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form_button">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
