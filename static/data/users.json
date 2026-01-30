@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "username": "spencer",
+            "email": "spencerrenfro1@gmail.com",
+            "password": "password"
+        },
+        {
+            "username": "test",
+            "email": "test@gmail.com",
+            "password": "test"
+        },
+        {
+            "username": "admin",
+            "email": "admin@gmail.com",
+            "password": "admin"
+        },
+        {
+            "username": "rifraf",
+            "email": "spencer.renfrodd13@gmail.com",
+            "password": "dsdfdsfs"
+        },
+        {
+            "username": "gfsdgsf",
+            "email": "gfsdgfsd@gmail.com",
+            "password": "fdsafdasf"
+        },
+        {
+            "username": "fdsafdasfdasf",
+            "email": "fdsafdafd@gmail.com",
+            "password": "rfedwsfewdfew"
+        },
+        {
+            "username": "riuffffffff",
+            "email": "spencer.renfro13@gmail.com",
+            "password": "fdasfdasfd"
+        }
+    ]
+}

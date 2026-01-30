@@ -3,10 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+        <title>Please Log In</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
+        <script>
+            function togglePassword()
+                {
+                const password = document.getElementById("password");
+                const btn = document.getElementById("show_password");
+
+                if (password.type === "password") {
+                    password.type = "text";
+                    btn.textContent = "Hide Password";
+                } else {
+                    password.type = "password";
+                    btn.textContent = "Show Password";
+                }
+            }
+        </script>
         <nav class="navbar">
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('polytopia') }}">Polytopia</a>
@@ -17,17 +32,19 @@
         </nav>
         <div>
             <h1 class="form_title">Login</h1>
-            <form action="/login" method="post" class="form">
+            <form  method="get" action="{{ url_for('login') }}" class="form">
+                <!-- action="/login" -->
                 <div>
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" minlength="8" maxlength="15" required>
+                    <button type="button" id="show_password" onClick="togglePassword()">Show Password</button>
                 </div>
-                <div class="form_button">
-                    <button type="submit">Login</button>
+                <div>
+                    <input type="submit" value="Login">
                 </div>
             </form>
         </div>

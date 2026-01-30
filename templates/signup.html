@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Please Sign Up</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -22,7 +22,7 @@
         <form action="/signup" method="post" class="form ">
             <div>
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="{{ error if error else '' }}" required>
             </div>
 
             <div>
@@ -31,10 +31,25 @@
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" minlength="8" maxlength="15" required>
+                <button type="button" id="show_password" onclick="togglePassword()">Show Password</button>
             </div>
-            <div class="form_button">
-                <button type="submit">Sign Up</button>
+            <script>
+                function togglePassword() {
+                    const password = document.getElementById("password");
+                    const btn = document.getElementById("show_password");
+
+                    if (password.type === "password") {
+                        password.type = "text";
+                        btn.textContent = "Hide Password";
+                    } else {
+                        password.type = "password";
+                        btn.textContent = "Show Password";
+                    }
+                }
+            </script>
+            <div>
+                <input type="submit" value="Login">
             </div>
         </form>
     </div>
