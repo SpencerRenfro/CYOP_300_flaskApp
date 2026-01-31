@@ -176,6 +176,7 @@ body {
   border-collapse: collapse;
   margin: 20px 0;
   border : solid 1px black;
+  margin-bottom: 140px;
 }
 
 .table th,
@@ -183,4 +184,5 @@ body {
   border: solid 1px black;
   padding: 0.5rem;
   text-align: left;
+  padding: 10px;
 }

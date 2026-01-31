@@ -4,6 +4,7 @@ Author: Spencer Renfro
 Date: 2026-1-29
 """
 from flask import Flask, render_template, request, url_for, redirect
+from passlib.hash import sha256_crypt
 from datetime import datetime
 import json
 
@@ -12,6 +13,10 @@ app = Flask(__name__)
 USERS_FILE = "static/data/users.json"
 
 # Helper functions
+
+@app.context_processor
+def inject_now():
+    return {"now": datetime.now()}
 
     # Load users from JSON file
 def load_users():
@@ -28,17 +33,21 @@ def save_users(data):
 def check_username_exists(username, email):
     users = load_users()
     for user in users["users"]:
-        if user["username"].lower() == username.lower() or user["email"].lower() == username.lower():
+        if user["username"].lower() == username.lower() or user["email"].lower() == email.lower():
             return True
     return False
 
-def check_password(username, email, password):
+def authenticate_user(username_or_email, password):
     users = load_users()
     for user in users["users"]:
-        if user["username"].lower() == username.lower() or user["email"].lower() == username.lower():
-            if user["password"] == password:
-                return True
-    return False
+        if user["username"].lower() == username_or_email.lower() or user["email"].lower() == username_or_email.lower():
+            stored_password = user["password"]
+            if stored_password.startswith("$5$"):
+                if sha256_crypt.verify(password, stored_password):
+                    return user
+            elif stored_password == password:
+                return user
+    return None
 # Routes
 @app.route("/")
 def index():
@@ -85,11 +94,18 @@ def signup():
     if check_username_exists(username, email):
         return render_template('signup.html', error="Username or email already registered")
     
+    # Hash password
+    hash_password = sha256_crypt.hash(password)
+    
+    # call to compare the two entries
+    if sha256_crypt.verify(password, hash_password):
+        print("Password matches")
+
     # Create new user
     data["users"].append({
         "username" : username,
         "email" : email,
-        "password" : password
+        "password" : hash_password
     })
     save_users(data)
     print("User created:", username, email, password)
@@ -100,11 +116,10 @@ def signup():
 def login():
     username = request.args.get("username")
     password = request.args.get("password")
-    email = request.args.get("email")
-    
     if username and password:
-        if  check_password(username, email, password):
-            return redirect(url_for('user_homepage', username=username))
+        user = authenticate_user(username, password)
+        if user:
+            return redirect(url_for('user_homepage', username=user["username"]))
 
     return render_template("login.html")
 
