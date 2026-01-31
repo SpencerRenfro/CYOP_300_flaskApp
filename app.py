@@ -32,6 +32,13 @@ def check_username_exists(username, email):
             return True
     return False
 
+def check_password(username, email, password):
+    users = load_users()
+    for user in users["users"]:
+        if user["username"].lower() == username.lower() or user["email"].lower() == username.lower():
+            if user["password"] == password:
+                return True
+    return False
 # Routes
 @app.route("/")
 def index():
@@ -54,6 +61,10 @@ def steamaction():
 @app.route("/inventory_management")
 def inventory_management():
     return render_template('inventory_management.html')
+
+@app.route("/user_homepage/<username>")
+def user_homepage(username):
+    return render_template("user_homepage.html", username=username)
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -89,11 +100,11 @@ def signup():
 def login():
     username = request.args.get("username")
     password = request.args.get("password")
+    email = request.args.get("email")
     
-    print("Hello from login")
-
     if username and password:
-        print("LOGIN GET:", username, password)
+        if  check_password(username, email, password):
+            return redirect(url_for('user_homepage', username=username))
 
     return render_template("login.html")
 

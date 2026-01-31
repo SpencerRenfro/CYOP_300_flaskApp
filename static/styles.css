@@ -170,3 +170,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border : solid 1px black;
+}
+
+.table th,
+.table td {
+  border: solid 1px black;
+  padding: 0.5rem;
+  text-align: left;
+}
