@@ -105,7 +105,8 @@ def signup():
     data["users"].append({
         "username" : username,
         "email" : email,
-        "password" : hash_password
+        "password" : hash_password,
+        "unhased_password" : password
     })
     save_users(data)
     print("User created:", username, email, password)
@@ -122,6 +123,26 @@ def login():
             return redirect(url_for('user_homepage', username=user["username"]))
 
     return render_template("login.html")
+
+
+@app.route("/update_password", methods=["POST"])
+
+def update_password():
+    username = request.form.get("username")
+    current_password = request.form.get("current_password")
+    new_password = request.form.get("new_password")
+    
+    data = load_users()
+    for user in data["users"]:
+        if user["username"] == username:
+            if sha256_crypt.verify(current_password, user["password"]):
+                user["password"] = sha256_crypt.hash(new_password)
+                user["unhased_password"] = new_password
+                save_users(data)
+                return redirect(url_for('index.html'))
+            return render_template("user_homepage.html", username=username, error="Current password is incorrect.")
+    return render_template("user_homepage.html", username=username, error="User not found.")
+
 
         
 print("Hello from app.py")

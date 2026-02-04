@@ -186,3 +186,10 @@ body {
   text-align: left;
   padding: 10px;
 }
+
+.userLogin_title {
+  text-align: center;
+  margin: 40px 0px;
+  font-size: 2rem;
+  font-weight: 700;
+}

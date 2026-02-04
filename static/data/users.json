@@ -1,54 +1,10 @@
 {
     "users": [
         {
-            "username": "spencer",
-            "email": "spencerrenfro1@gmail.com",
-            "password": "password"
-        },
-        {
-            "username": "test",
-            "email": "test@gmail.com",
-            "password": "test"
-        },
-        {
-            "username": "admin",
-            "email": "admin@gmail.com",
-            "password": "admin"
-        },
-        {
-            "username": "rifraf",
-            "email": "spencer.renfrodd13@gmail.com",
-            "password": "dsdfdsfs"
-        },
-        {
-            "username": "gfsdgsf",
-            "email": "gfsdgfsd@gmail.com",
-            "password": "fdsafdasf"
-        },
-        {
-            "username": "fdsafdasfdasf",
-            "email": "fdsafdafd@gmail.com",
-            "password": "rfedwsfewdfew"
-        },
-        {
-            "username": "riuffffffff",
-            "email": "spencer.renfro13@gmail.com",
-            "password": "fdasfdasfd"
-        },
-        {
-            "username": "rifraf94",
-            "email": "sr13@gmail.com",
-            "password": "$5$rounds=535000$OQATwHcJNNiqIKt5$g.b.GicJXOSGnb/.TyFgJSFujVKV8PAHd4Vo70eRN8B"
-        },
-        {
-            "username": "test3",
-            "email": "test3@gmail.com",
-            "password": "$5$rounds=535000$c6DuosQkaQNvXqH7$VThROJ6RrZMQw6pFCKfbsDZ7EJeYEVLx7XPXtTLaO86"
-        },
-        {
-            "username": "12345678",
-            "email": "12345678@gmail.com",
-            "password": "$5$rounds=535000$2JpbylwSxFIRfzUI$ZtX79o8Am3OmhWBI5fLLH5uvL66PleoRGItxRLbbuo0"
+            "username": "example",
+            "email": "example@gmail.com",
+            "password": "$5$rounds=535000$oMdheA1kgtvTZ9UM$LERBM4unJhsUPzadTIFbF78LrCw0sg8AtpFs4VTZjC6",
+            "unhased_password": "example123"
         }
     ]
 }
