@@ -31,13 +31,13 @@
             }
     </script>
     <h1 class="userLogin_title">Welcome to the User Homepage {{ username }}</h1>
-    {% if error %}
-        <div>
-            <p>{{ error }}</p>
-        </div>
-    {% endif %}
     <div>
         <h1 class="form_title">Update Password</h1>
+        {% if error %}
+        <div class="error-container">
+            <p class="error-message">{{ error }}</p>
+        </div>
+        {% endif %}
         <form action="/update_password" method="post" class="form">
             <div>
                 <input type="hidden" id="username" name="username" value="{{ username }}" required>
@@ -49,7 +49,7 @@
             </div>
             <div>
                 <label for="new_password">New Password</label>
-                <input type="password" id="new_password" name="new_password" required>
+                <input type="password" id="new_password" name="new_password" minlength="8" maxlength="15"  required>
                 <button type="button" id="show_password" onclick="togglePassword('new_password', 'new_show_password')">Show Password</button>
             </div>
             <div>

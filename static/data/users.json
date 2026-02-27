@@ -3,8 +3,8 @@
         {
             "username": "example",
             "email": "example@gmail.com",
-            "password": "$5$rounds=535000$oMdheA1kgtvTZ9UM$LERBM4unJhsUPzadTIFbF78LrCw0sg8AtpFs4VTZjC6",
-            "unhased_password": "example123"
+            "password": "$5$rounds=535000$nZDJ6HmJRZn6jwfA$ujWx.463qdNHI55oYofAvOxFGc6rkA.GITVSJOUMFi9",
+            "unhased_password": "Example123!"
         }
     ]
 }

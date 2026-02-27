@@ -193,3 +193,14 @@ body {
   font-size: 2rem;
   font-weight: 700;
 }
+.error-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  border: solid 1px red;
+}
